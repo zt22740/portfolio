@@ -1,0 +1,32 @@
+.sidebar {
+    width: 25%;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-img {
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #555;
+  }
+  
+  .role, .location {
+    color: #bbb;
+  }
+  
+  .cta-button {
+    background-color: #8b5cf6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #7c3aed;
+  }
+  
