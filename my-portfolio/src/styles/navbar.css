@@ -1,14 +1,17 @@
 .navbar {
-    width: 75%;
-    margin: auto;
+    width: auto; /* Makes navbar only as wide as its content */
+    height: 60px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    gap: 20px; /* Adds spacing between links */
+    padding: 0 20px;
     background-color: #222;
-    color: white;
+    position: fixed;
+    left: 300px; /* Places navbar right next to the sidebar */
+    top: 0;
+    border-radius: 0 10px 10px 0; /* Adds rounded corners on the right */
   }
-  
+
   .navbar ul {
     list-style: none;
     display: flex;  /* Makes links align properly */

@@ -1,16 +1,13 @@
 import "../styles/sidebar.css";
+import myImage from "../assets/DSCF9045.jpg"; // Import the image
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
-      <img
-        src="https://via.placeholder.com/100"
-        alt="Profile"
-        className="profile-img"
-      />
-      <h2>Alex Walker</h2>
-      <p className="role">UI/UX Designer & Frontend Developer</p>
-      <p className="location">Odessa, Ukraine</p>
+      <img src={myImage} alt="Profile" className="profile-img" /> {/* Use imported image */}
+      <h2>Xin Yan Lim</h2>
+      <p className="role">Computer Science Student</p>
+      <p className="location">Bristol, United Kingdom</p>
       <button className="cta-button">Let's Work Together</button>
     </aside>
   );

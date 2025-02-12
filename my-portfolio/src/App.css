@@ -68,14 +68,16 @@
   padding: 0 20px;
   background-color: #222;
   position: fixed;
-  left: 250px; /* Aligns with the sidebar */
+  left: 250px;
   top: 0;
   right: 0;
 }
 
 .content-container {
-  padding: 80px 20px; /* Adds space below the navbar */
+  margin-left: 250px; /* Ensures it does not overlap the sidebar */
+  margin-top: 80px; /* Pushes it down so it's below the navbar */
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 50px; /* Spacing between sections */
+  gap: 50px; /* Space between sections */
 }
