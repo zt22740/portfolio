@@ -1,11 +1,17 @@
 .sidebar {
-    width: 25%;
+    width: 250px;
     height: 100vh;
     background-color: #111;
     color: white;
-    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  
   
   .profile-img {
     width: 80px;
