@@ -11,10 +11,10 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
   return (
     <nav className="navbar">
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#resume">Resume</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#volunteering">Volunteering</a></li>
       </ul>
       <div className="theme-toggle-container">
         <button onClick={toggleTheme} className="theme-toggle">

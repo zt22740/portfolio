@@ -43,9 +43,11 @@
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease;
+    perspective: 1000px; 
   }
   
   .github-link:hover {
     background-color: #7c3aed;
+    transform: rotateX(180deg);
   }
   

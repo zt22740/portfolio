@@ -1,0 +1,33 @@
+import "../styles/experience.css";
+
+const experienceData = [
+  {
+    id: 1,
+    company: "Keysight Technologies",
+    role: "Software Engineering Intern",
+    years: "summer 2024",
+    description: "As an intern in the Order Fulfillment department, I gained hands-on experience through a series of impactful projects. My first task involved automating the creation of driver folders based on order data, streamlining the workflow. I then developed a website that enabled test engineers to easily verify if they were using the latest software version, enhancing their efficiency. Additionally, I conducted practical testing on PCs and SIM cards, which provided me with real-world industrial exposure and experience. This internship has sharpened both my technical and problem-solving skills.",
+  },
+];
+
+const Experience = () => {
+    return (
+      <section id="experience" className="experience-section">
+        <h2>Experience</h2>
+        <div className="timeline">
+          {experienceData.map((exp, index) => (
+            <div key={exp.id} className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}>
+              <div className="timeline-content">
+                <h3>{exp.company}</h3>
+                <p><strong>Role:</strong> {exp.role}</p>
+                <p><strong>Years:</strong> {exp.years}</p>
+                <p>{exp.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  };
+  
+  export default Experience;

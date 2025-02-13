@@ -29,18 +29,6 @@
     color: #bbb;
   }
   
-  .cta-button {
-    background-color: #8b5cf6;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cta-button:hover {
-    background-color: #7c3aed;
-  }
   
   .contact-icons {
     display: flex;

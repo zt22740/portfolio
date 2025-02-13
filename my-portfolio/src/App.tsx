@@ -5,6 +5,8 @@ import Sidebar from "./components/sidebar";
 import About from "./components/about";
 import Projects from "./components/projects";
 import Footer from "./components/footer";
+import Education from "./components/education";
+import Experience from "./components/experience";
 
 function App() {
   // Load theme from localStorage or default to dark mode
@@ -29,6 +31,8 @@ function App() {
         <Navbar toggleTheme={toggleTheme} theme={theme} />
         <div className="content-container">
           <About />
+          <Experience />
+          <Education />
           <Projects />
           <Footer />
         </div>

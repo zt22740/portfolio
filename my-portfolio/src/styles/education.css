@@ -1,0 +1,101 @@
+.education-section {
+  text-align: center;
+  padding: 50px;
+  overflow: hidden;
+}
+
+/* Education Card with Slide Animation */
+.education-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 2px solid #555;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Slide Animation */
+.education-card.next {
+  animation: slide-in-left 0.4s ease-in-out;
+}
+
+.education-card.prev {
+  animation: slide-in-right 0.4s ease-in-out;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Navigation Buttons */
+.education-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.nav-button {
+  border: 2px solid #555;
+  background: none;
+  color: #555;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background: #555;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Disabled Button */
+.nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Dots Container */
+.dot-container {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #aaa;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #555;
+  transform: scale(1.2);
+}
