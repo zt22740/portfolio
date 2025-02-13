@@ -36,3 +36,22 @@
     background-color: #7c3aed;
   }
   
+  .contact-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons */
+    gap: 15px; /* Spacing between icons */
+    margin-top: 15px;
+  }
+  
+  .icon-link {
+    color: white;
+    text-decoration: none;
+    font-size: 24px; /* Adjust icon size */
+    transition: color 0.3s ease;
+  }
+  
+  .icon-link:hover {
+    color: #8b5cf6; /* Change color on hover */
+  }
+  
+  
