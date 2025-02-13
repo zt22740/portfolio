@@ -5,9 +5,8 @@
     align-items: center;
     gap: 20px; /* Adds spacing between links */
     padding: 0 20px;
-    background-color: #222;
     position: fixed;
-    left: 300px; /* Places navbar right next to the sidebar */
+    left: 350px; /* Places navbar right next to the sidebar */
     top: 0;
     border-radius: 0 10px 10px 0; /* Adds rounded corners on the right */
   }
@@ -25,7 +24,7 @@
   }
   
   .navbar a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 16px;
   }

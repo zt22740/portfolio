@@ -1,23 +1,29 @@
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #111;
-    color: white;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  width: 260px; /* Sidebar width */
+  height: 500px; /* Let it expand based on content */
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  position: fixed;
+  left: 20px; /* Moves it slightly away from the left */
+  top: 50%;
+  transform: translateY(-50%); /* Centers it vertically */
+  padding: 20px;
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #555; /* Border with theme color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for floating effect */
+  transition: background 0.3s ease, color 0.3s ease;
+}
   
-  
-  .profile-img {
-    width: 80px;
-    border-radius: 50%;
-    border: 2px solid #555;
-  }
+.profile-img {
+  width: 100px; /* Set a fixed width */
+  height: 100px; /* Set the same height to make it square */
+  border-radius: 12px; /* Rounded corners */
+  border: 3px solid #555; /* Adds a border */
+  display: block; /* Ensures it doesn't have extra spacing */
+  margin: 0 auto; /* Centers the image */
+  object-fit: cover;
+}
+
   
   .role, .location {
     color: #bbb;
