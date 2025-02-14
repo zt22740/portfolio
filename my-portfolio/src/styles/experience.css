@@ -91,3 +91,15 @@
     }
   }
   
+  .experience-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .company-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 5px;
+  }
