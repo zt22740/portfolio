@@ -1,19 +1,23 @@
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "../styles/education.css";
+import bristolLogo from "../assets/uob logo.jpg";
+import intiLogo from "../assets/inti logo.jpg";
 
 const educationData = [
   {
     id: 1,
     title: "University of Bristol",
+    logo: bristolLogo,
     degree: "MEng Computer Science",
     years: "2022 - 2026",
     honors: "First-Class Honours",
   },
   {
     id: 2,
-    title: "A-Levels",
-    institution: "Inti International College Penang",
+    title: "Inti International College Penang",
+    logo: intiLogo,
+    degree: "A-Levels",
     years: "2021 - 2022",
     subjects: "Physics, Chemistry, Mathematics, Further Mathematics",
     grades: "A*, A*, A*, A*",
@@ -22,7 +26,7 @@ const educationData = [
 
 const Education = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(""); // For slide animation
+  const [direction, setDirection] = useState(""); // Controls animation direction
 
   // Enable swiping gestures
   const handlers = useSwipeable({
@@ -50,6 +54,7 @@ const Education = () => {
 
       {/* Swipeable Education Card */}
       <div className={`education-card ${direction}`}>
+        <img src={educationData[currentIndex].logo} alt={educationData[currentIndex].title} className="education-logo" />
         <h3>{educationData[currentIndex].title}</h3>
         <p><strong>Years:</strong> {educationData[currentIndex].years}</p>
         {educationData[currentIndex].degree && <p><strong>Degree:</strong> {educationData[currentIndex].degree}</p>}

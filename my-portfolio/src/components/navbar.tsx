@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#volunteering">Volunteering</a></li>
+        <li><a href="#skills">Skills</a></li>
       </ul>
       <div className="theme-toggle-container">
         <button onClick={toggleTheme} className="theme-toggle">

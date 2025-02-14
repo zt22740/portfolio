@@ -7,6 +7,7 @@ import Projects from "./components/projects";
 import Footer from "./components/footer";
 import Education from "./components/education";
 import Experience from "./components/experience";
+import Skills from "./components/skills";
 
 function App() {
   // Load theme from localStorage or default to dark mode
@@ -34,6 +35,7 @@ function App() {
           <Experience />
           <Education />
           <Projects />
+          <Skills />
           <Footer />
         </div>
       </div>
