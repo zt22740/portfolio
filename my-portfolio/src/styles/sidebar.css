@@ -48,4 +48,22 @@
     color: #8b5cf6; /* Change color on hover */
   }
   
+  .cta-button {
+    background-color: #8b5cf6;
+    color: white;
+    padding: 10px 15px;
+    border: 2px solid #8b5cf6;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #7c3aed;
+    transform: scale(1.05);
+  }
   

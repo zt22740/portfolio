@@ -24,7 +24,7 @@
   .project-media {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     display: block;
   }
@@ -49,5 +49,9 @@
   .github-link:hover {
     background-color: #7c3aed;
     transform: rotateX(180deg);
+  }
+
+  .github-link.hidden {
+    display: none; /* Hides button if no GitHub link */
   }
   

@@ -43,20 +43,6 @@
     padding-left: 30px;
   }
   
-  /* Timeline Dots */
-  .timeline-item::before {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: #555;
-    border-radius: 50%;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
   /* Timeline Content Box */
   .timeline-content {
     background: var(--card-bg);
@@ -103,3 +89,15 @@
     height: auto;
     border-radius: 5px;
   }
+  /* Experience List */
+.experience-list {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .experience-list li {
+    margin-bottom: 5px;
+    list-style-type: disc; /* Default bullet points */
+    color: var(--text-color);
+  }
+  
