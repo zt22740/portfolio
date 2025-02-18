@@ -1,5 +1,6 @@
 import "../styles/experience.css";
 import keysightLogo from "../assets/KEYS-18a34669.png"; // Import the company logo
+import useFadeUp from "./fadeUp";
 
 const experienceData = [
   {
@@ -16,11 +17,12 @@ const experienceData = [
   },
 ];
 
-const Experience = () => {
+const Experience: React.FC = () => {
+  useFadeUp(); 
   return (
-    <section id="experience" className="experience-section">
-      <h2>Experience</h2>
-      <div className="timeline">
+    <section id="experience" className="experience-section element-fade-up" data-animation="fade-up">
+      <h1>Experience</h1>
+      <div className="timeline element-fade-up faster" data-animation="fade-up">
         {experienceData.map((exp, index) => (
           <div key={exp.id} className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}>
             <div className="timeline-content">
