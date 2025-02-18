@@ -15,12 +15,12 @@
 }
   
 .profile-img {
-  width: 100px; /* Set a fixed width */
-  height: 100px; /* Set the same height to make it square */
-  border-radius: 12px; /* Rounded corners */
-  border: 3px solid #555; /* Adds a border */
-  display: block; /* Ensures it doesn't have extra spacing */
-  margin: 0 auto; /* Centers the image */
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  border: 3px solid #555;
+  display: block;
+  margin: 0 auto;
   object-fit: cover;
 }
 
