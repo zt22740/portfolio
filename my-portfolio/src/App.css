@@ -26,13 +26,14 @@ body {
   background: var(--background-color);
   color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 /* 🌍 Main Content Layout */
 .main-content {
   display: flex;
   flex-direction: column;
-  margin-left: 260px; /* Creates space for sidebar */
+  margin-left: 260px;
   padding: 20px;
   min-height: 100vh;
 }
@@ -135,44 +136,6 @@ button:hover {
 button:focus {
   outline: none;
   box-shadow: none;
-}
-
-
-
-/* 📌 Responsive Main Content */
-@media screen and (max-width: 768px) {
-  .main-content {
-    margin-left: 0;
-    padding: 10px;
-  }
-  
-  /* 📌 Responsive Sidebar */
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    transform: none;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .navbar {
-    left: 0;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .content-container {
-    margin-left: 0;
-    padding: 10px;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
 }
 
 .footer {

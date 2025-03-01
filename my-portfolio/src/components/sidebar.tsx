@@ -1,7 +1,7 @@
 import "../styles/sidebar.css";
 import myImage from "../assets/DSCF9045.jpg"; // Profile image
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"; // Import icons
-import myCV from "../assets/Xin_Yan_Lim_CV.pdf"; // CV file
+import myCV from "../assets/Xin_Yan_Lim_CV.pdf";
 import useFadeUp from "./fadeUp";
 
 const Sidebar: React.FC = () => {

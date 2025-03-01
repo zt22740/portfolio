@@ -25,7 +25,11 @@ const useFadeUp = () => {
         const rect = element.getBoundingClientRect();
         const offsetTop = rect.top + window.scrollY;
 
-        if (window.scrollY + winHeightPadded > offsetTop) {
+        // If element is in viewport OR if we reached the end of the page, trigger animation
+        const isInViewport = window.scrollY + winHeightPadded > offsetTop;
+        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+
+        if (isInViewport || isAtBottom) {
           const timeout = parseInt(element.getAttribute("data-timeout") || "0", 10);
           setTimeout(() => {
             element.classList.add("triggered", element.getAttribute("data-animation") || "");
