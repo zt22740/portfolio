@@ -6,6 +6,7 @@ import project4 from "../assets/haunted house.png";
 import project5 from "../assets/medic recall.png";
 import project6 from "../assets/cg.gif";
 import project7 from "../assets/mekdi pipeline.png";
+import useFadeUp from "./fadeUp";
 
 const projects = [
   {
@@ -52,13 +53,14 @@ const projects = [
   },
 ];
 
-const Projects = () => {
+const Projects: React.FC = () => {
+  useFadeUp(); 
   return (
-    <section id="projects" className="projects">
-      <h2>My Projects</h2>
-      <div className="projects-grid">
+    <section id="projects" className="projects element-fade-up" data-animation="fade-up">
+      <h1>My Projects</h1>
+      <div className="projects-grid element-fade-up" data-animation="fade-up">
         {projects.map((project) => (
-            <div key={project.id} className="project-card">
+            <div key={project.id} className="project-card element-fade-up" data-animation="fade-up">
               {/* Conditionally Render GIF or Image */}
               {project.gif ? (
                 <img src={project.gif} alt={project.title} className="project-media" />

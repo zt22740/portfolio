@@ -37,18 +37,10 @@ body {
   min-height: 100vh;
 }
 
-/* 📌 Responsive Main Content */
-@media screen and (max-width: 768px) {
-  .main-content {
-    margin-left: 0; /* Removes extra margin on small screens */
-    padding: 10px;
-  }
-}
-
 /* 📌 Sidebar Styling */
 .sidebar {
-  width: 250px;
-  height: auto;
+  width: 260px;
+  height: 500px;
   background-color: var(--card-bg);
   color: var(--text-color);
   position: fixed;
@@ -57,22 +49,13 @@ body {
   transform: translateY(-50%);
   padding: 20px;
   border-radius: 12px;
-  border: 2px solid var(--button-bg);
+  border: 2px solid #555;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* 📌 Responsive Sidebar */
-@media screen and (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    transform: none;
-    text-align: center;
-    padding: 10px;
-  }
+  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 📌 Navbar Styling */
@@ -90,15 +73,6 @@ body {
   z-index: 100;
 }
 
-/* 📌 Responsive Navbar */
-@media screen and (max-width: 768px) {
-  .navbar {
-    left: 0;
-    width: 100%;
-    justify-content: center;
-  }
-}
-
 /* 📌 Content Container */
 .content-container {
   margin-left: 100px;
@@ -107,14 +81,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 50px;
-}
-
-/* 📌 Responsive Content */
-@media screen and (max-width: 768px) {
-  .content-container {
-    margin-left: 0;
-    padding: 10px;
-  }
 }
 
 /* 🌙 Theme Toggle Button */
@@ -132,7 +98,7 @@ body {
 }
 
 .theme-toggle-container {
-  margin-left: auto; /* Pushes it to the right without affecting layout */
+  margin-left: auto;
 }
 
 .theme-toggle:focus {
@@ -142,28 +108,28 @@ body {
 
 /* 📌 General Button Style (With Flip Effect) */
 button {
-  border: 2px solid #555; /* Rounded border with #555 color */
-  background: none; /* No background */
-  color: #555; /* Text color matches border */
-  padding: 6px 12px; /* Adjusted padding for better sizing */
-  font-size: 14px; /* Slightly smaller font */
+  border: 2px solid #555;
+  background: none;
+  color: #555;
+  padding: 6px 12px;
+  font-size: 14px;
   font-weight: bold;
-  text-decoration: none; /* Remove underline for links */
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  border-radius: 8px; /* Rounded border */
-  perspective: 1000px; /* Adds 3D effect */
+  border-radius: 8px;
+  perspective: 1000px;
   transform-style: preserve-3d;
   transform-origin: center bottom;
 }
 
 /* Hover and Active States */
 button:hover {
-  background-color: #555; /* Fill background on hover */
-  color: white; /* Change text to white */
-  transform: rotateX(-15deg); /* Tilts the button upwards */
+  background-color: #555;
+  color: white;
+  transform: rotateX(-15deg);
 }
 
 button:focus {
@@ -171,15 +137,44 @@ button:focus {
   box-shadow: none;
 }
 
-/* 📌 Responsive Buttons */
+
+
+/* 📌 Responsive Main Content */
 @media screen and (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+  
+  /* 📌 Responsive Sidebar */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    transform: none;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .navbar {
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content-container {
+    margin-left: 0;
+    padding: 10px;
+  }
+
   button {
     font-size: 12px;
     padding: 6px 10px;
   }
 }
 
-/* 📌 Footer */
 .footer {
   text-align: center;
   padding: 20px;
@@ -187,4 +182,27 @@ button:focus {
 
 html {
   scroll-behavior: smooth;
+}
+
+
+/*===========
+* Fade animation
+* ==========*/
+.element-fade-up {
+	transform: translateY(30px);
+	opacity: 0;
+	transition: 0.8s;
+}
+
+.faster { 
+    transition: 0.7s !important;
+}
+
+.slower { 
+  transition: 1s !important;
+}
+
+.element-fade-up.triggered {
+	transform: translateY(0px);
+	opacity: 1;
 }

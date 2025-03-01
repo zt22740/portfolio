@@ -1,4 +1,5 @@
 import "../styles/skills.css";
+import useFadeUp from "./fadeUp";
 import { FaPython, FaJs, FaReact, FaJava, FaHtml5, FaCss3, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiCplusplus, SiGoland, SiMysql, SiUnity, SiSharp, SiHaskell, SiC, SiTypescript } from "react-icons/si";
 
@@ -27,15 +28,16 @@ const languages = [
   { id: 3, name: "Malay", level: "Intermediate" },
 ];
 
-const Skills = () => {
+const Skills: React.FC = () => {
+  useFadeUp(); 
   return (
-    <section id="skills" className="skills-section">
-      <h2>Skills</h2>
+    <section id="skills" className="skills-section element-fade-up" data-animation="fade-up">
+      <h1>Skills</h1>
 
       {/* Programming Skills */}
       <div className="skills-grid">
         {skillsData.map((skill) => (
-          <div key={skill.id} className="skill-card">
+          <div key={skill.id} className="skill-card element-fade-up faster" data-animation="fade-up">
             {skill.icon}
             <p>{skill.name}</p>
           </div>
@@ -43,8 +45,8 @@ const Skills = () => {
       </div>
 
       {/* Human Languages */}
-      <h3>Languages</h3>
-      <ul className="language-list">
+      <h1 className="element-fade-up" data-animation="fade-up">Languages</h1>
+      <ul className="language-list element-fade-up" data-animation="fade-up">
         {languages.map((lang) => (
           <li key={lang.id}>
             <strong>{lang.name}</strong>: {lang.level}
