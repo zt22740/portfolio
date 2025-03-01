@@ -1,16 +1,16 @@
 .sidebar {
-  width: 260px; /* Sidebar width */
-  height: 500px; /* Let it expand based on content */
+  width: 260px;
+  height: 500px;
   background-color: var(--card-bg);
   color: var(--text-color);
   position: fixed;
-  left: 20px; /* Moves it slightly away from the left */
+  left: 20px;
   top: 50%;
-  transform: translateY(-50%); /* Centers it vertically */
+  transform: translateY(-50%);
   padding: 20px;
-  border-radius: 12px; /* Rounded corners */
-  border: 2px solid #555; /* Border with theme color */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for floating effect */
+  border-radius: 12px;
+  border: 2px solid #555;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease, color 0.3s ease;
 }
   

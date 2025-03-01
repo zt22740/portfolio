@@ -140,14 +140,14 @@ button:focus {
 
 
 /* 📌 Responsive Main Content */
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .main-content {
     margin-left: 0;
     padding: 10px;
-  } */
+  }
   
   /* 📌 Responsive Sidebar */
-  /* .sidebar {
+  .sidebar {
     position: fixed;
     left: 0;
     top: 0;
@@ -173,7 +173,7 @@ button:focus {
     font-size: 12px;
     padding: 6px 10px;
   }
-} */
+}
 
 .footer {
   text-align: center;
