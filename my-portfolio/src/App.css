@@ -98,7 +98,7 @@ body {
 }
 
 .theme-toggle-container {
-  margin-left: auto; /* Pushes it to the right without affecting layout */
+  margin-left: auto;
 }
 
 .theme-toggle:focus {
@@ -108,28 +108,28 @@ body {
 
 /* 📌 General Button Style (With Flip Effect) */
 button {
-  border: 2px solid #555; /* Rounded border with #555 color */
-  background: none; /* No background */
-  color: #555; /* Text color matches border */
-  padding: 6px 12px; /* Adjusted padding for better sizing */
-  font-size: 14px; /* Slightly smaller font */
+  border: 2px solid #555;
+  background: none;
+  color: #555;
+  padding: 6px 12px;
+  font-size: 14px;
   font-weight: bold;
-  text-decoration: none; /* Remove underline for links */
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  border-radius: 8px; /* Rounded border */
-  perspective: 1000px; /* Adds 3D effect */
+  border-radius: 8px;
+  perspective: 1000px;
   transform-style: preserve-3d;
   transform-origin: center bottom;
 }
 
 /* Hover and Active States */
 button:hover {
-  background-color: #555; /* Fill background on hover */
-  color: white; /* Change text to white */
-  transform: rotateX(-15deg); /* Tilts the button upwards */
+  background-color: #555;
+  color: white;
+  transform: rotateX(-15deg);
 }
 
 button:focus {
@@ -140,14 +140,14 @@ button:focus {
 
 
 /* 📌 Responsive Main Content */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .main-content {
-    margin-left: 0; /* Removes extra margin on small screens */
+    margin-left: 0;
     padding: 10px;
-  }
-/* 📌 Responsive Sidebar */
-
-  .sidebar {
+  } */
+  
+  /* 📌 Responsive Sidebar */
+  /* .sidebar {
     position: fixed;
     left: 0;
     top: 0;
@@ -173,9 +173,8 @@ button:focus {
     font-size: 12px;
     padding: 6px 10px;
   }
-}
+} */
 
-/* 📌 Footer */
 .footer {
   text-align: center;
   padding: 20px;

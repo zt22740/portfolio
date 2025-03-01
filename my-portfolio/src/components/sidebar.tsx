@@ -13,7 +13,6 @@ const Sidebar: React.FC = () => {
       <p className="role element-fade-up" data-animation="fade-up">Computer Science Student</p>
       <p className="location element-fade-up" data-animation="fade-up">Bristol, United Kingdom</p>
 
-      {/* Contact Icons - Side by Side */}
       <div className="contact-icons element-fade-up" data-animation="fade-up">
         <a href="mailto:lxinyan03@gmail.com" className="icon-link" target="_blank">
           <FaEnvelope className="icon" />
