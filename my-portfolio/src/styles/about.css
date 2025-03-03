@@ -1,0 +1,27 @@
+/* 🌍 General About Section Styling */
+.about-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+    position: static;
+  }
+  
+  /* 🌍 Heading Styles */
+  .about-section h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* 🌍 Paragraph Styling */
+  .about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+
+  
