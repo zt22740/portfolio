@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect} from "react";
 import "../styles/education.css";
 import bristolLogo from "../assets/uob logo.jpg";
 import intiLogo from "../assets/inti logo.jpg";
@@ -34,15 +34,38 @@ const Education = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
-    event.stopPropagation(); // Prevents page scrolling
-    const { deltaY } = event;
-    if (deltaY > 0 && currentIndex < educationData.length - 1) {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
-    } else if (deltaY < 0 && currentIndex > 0) {
-      setCurrentIndex((prevIndex) => prevIndex - 1);
-    }
-  };
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      const { deltaY } = e;
+
+      if (deltaY > 0) {
+        // --- USER SCROLLING DOWN ---
+        if (currentIndex < educationData.length - 1) {
+          e.preventDefault(); // Lock page
+          // Move to next card immediately
+          setCurrentIndex(currentIndex + 1); 
+        }
+      } else {
+        // --- USER SCROLLING UP ---
+        if (currentIndex > 0) {
+          e.preventDefault(); // Lock page
+          // Move to previous card immediately
+          setCurrentIndex(currentIndex - 1);
+        }
+      }
+    };
+
+    // Attach listener
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
+    // Clean up listener
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
+  }, [currentIndex]); // Re-running this effect on index change ensures we always have the latest index
 
   // Handle dot click navigation
   const goToCard = (index: number) => {
@@ -53,10 +76,9 @@ const Education = () => {
     <section id="education" className="education-section">
       <h2 className="education-title">Education</h2>
 
-      {/* Scrollable Cards */}
+      {/* Remove onWheel prop, we handle it in useEffect */}
       <div
         className="education-card-container"
-        onWheel={handleScroll}
         ref={scrollContainerRef}
       >
         {educationData.map((edu, index) => (
@@ -72,7 +94,6 @@ const Education = () => {
         ))}
       </div>
 
-      {/* 📌 Vertical Navigation Dots (Right Side) */}
       <div className="education-nav">
         {educationData.map((_, index) => (
           <span
