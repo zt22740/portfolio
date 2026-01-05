@@ -1,7 +1,7 @@
 import "../styles/skills.css";
 import useFadeUp from "./fadeUp";
 import { FaPython, FaJs, FaReact, FaJava, FaHtml5, FaCss3, FaNodeJs, FaGithub } from "react-icons/fa";
-import { SiCplusplus, SiGoland, SiMysql, SiUnity, SiSharp, SiHaskell, SiC, SiTypescript, SiDart, SiFlutter} from "react-icons/si";
+import { SiCplusplus, SiGoland, SiMysql, SiUnity, SiSharp, SiHaskell, SiC, SiTypescript, SiDart, SiFlutter, SiFirebase } from "react-icons/si";
 
 const skillsData = [
     { id: 1, name: "Python", icon: <FaPython className="skill-icon" />, category: "Programming" },
@@ -22,6 +22,7 @@ const skillsData = [
     { id: 16, name: "TypeScript", icon: <SiTypescript className="skill-icon" />, category: "Programming" },
     { id: 17, name: "Dart", icon: <SiDart className="skill-icon" />, category: "Programming" },
     { id: 18, name: "Flutter", icon: <SiFlutter className="skill-icon" />, category: "Framework" },
+    { id: 19, name: "Firebase", icon: <SiFirebase className="skill-icon" />, category: "Backend" },
   ];
 
 const languages = [

@@ -1,0 +1,67 @@
+/* --- 1. THE PHYSICS (Don't touch this) --- */
+.rolling-box {
+  display: inline-block;
+  height: 50px; /* Physics relies on this fixed height */
+  text-decoration: none;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 0 0px; /* Spacing */
+}
+
+/* Width Variants */
+.rolling-box.wide { width: 160px; }
+.rolling-box.square { width: 50px; }
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-origin: center center -25px; /* Axis = Half of height */
+}
+
+.rolling-box:hover .cube {
+  transform: rotateX(90deg); /* The Roll Action */
+}
+
+.face {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* Removed colors from here! */
+}
+
+.front { transform: rotateY(0deg); }
+.bottom { 
+  top: 100%; 
+  transform-origin: top center; 
+  transform: rotateX(-90deg); 
+}
+
+/* --- 2. THE SKINS (Edit these colors!) --- */
+
+/* Style A: The Purple "CV" Button */
+.cv-skin .face {
+  background-color: #115e59;
+  color: white;
+  border: 1px solid #5eead4;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Style B: The "Icon" Buttons */
+/* You can make these transparent, dark, or whatever you want */
+.icon-skin .face {
+  background-color: transparent; /* Or #112240 for dark block */
+  border: 2px solid transparent; /* Visible border */
+  color: #ccd6f6;
+  border-radius: 50%; /* Make them circular! */
+  font-size: 20px;
+}

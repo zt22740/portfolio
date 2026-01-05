@@ -6,6 +6,7 @@ import project4 from "../assets/haunted house.png";
 import project5 from "../assets/medic recall.png";
 import project6 from "../assets/cg.gif";
 import project7 from "../assets/mekdi pipeline.png";
+import project8 from "../assets/DrugWise.png";
 import useFadeUp from "./fadeUp";
 
 const projects = [
@@ -50,6 +51,12 @@ const projects = [
     title: "Mekdi Pipeline",
     gif: project7,
     github: "https://github.com/kaungzhan/eth-crypto-game.git",
+  },
+  {
+    id: 8,
+    title: "DrugWise",
+    image: project8,
+    github: "https://github.com/zt22740/apuc_new.git",
   },
 ];
 

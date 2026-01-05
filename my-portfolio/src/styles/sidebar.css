@@ -4,6 +4,11 @@
   background-color: var(--card-bg);
   color: var(--text-color);
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers EVERYTHING horizontally */
+  justify-content: center; /* Centers content vertically inside the card */
+  text-align: center;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
@@ -16,8 +21,8 @@
   
 .profile-img {
   top: 10%;
-  width: 12vw;
-  height: 12vw;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 3px solid #555;
   display: block;
@@ -49,35 +54,41 @@
     color: #8b5cf6; /* Change color on hover */
   }
   
-/* Static button container */
+/* --- 3D Rolling Block Button (Roll Up / Consistent Color) --- */
+
+/* 1. The Scene Container */
 .cta-button {
-  background-color: #8b5cf6;
-  color: white;
-  padding: 10px 15px;
-  border: 2px solid #8b5cf6;
-  border-radius: 8px;
+  position: relative;
+  display: inline-block;
+  width: 160px;
+  height: 50px; /* Fixed height is crucial for 3D math */
+  background: transparent;
+  border: none;
   cursor: pointer;
-  display: inline-block;
-  text-align: center;
+  perspective: 1000px; /* Depth perspective */
   text-decoration: none;
-  font-size: 16px;
-  position: relative; /* Needed for text flipping */
-  overflow: hidden;
-  perspective: 1000px; /* Enables 3D effect */
+  margin-top: 20px;
 }
 
-/* Inner text wrapper for flipping */
+/* 2. The Cube Wrapper (The Object that Rotates) */
 .cta-button span {
-  display: inline-block;
-  transition: transform 0.5s ease-in-out;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); /* Snappy easing */
+  transform-style: preserve-3d; /* Essential for 3D children */
+  
+  /* Key geometry fix: Set the rotation axis to the exact center of the cube volume */
+  /* 25px is exactly half of the 50px height */
+  transform-origin: center center -25px;
 }
 
-/* Backface of the text */
+/* 3. Shared Styles for Faces (Consistent Color) */
+.cta-button span::before,
 .cta-button span::after {
-  content: attr(data-flip-text); /* Show flipped text */
   position: absolute;
   top: 0;
   left: 0;
@@ -86,11 +97,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotateX(180deg);
-  backface-visibility: hidden;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  /* --- CONSISTENT COLOR HERE --- */
+  background-color: #8b5cf6; /* Solid purple background for both sides */
+  color: white; /* White text for both sides */
+  border: 1px solid #7c3aed; /* Slightly darker border for definition */
+  /* Optional: add a slight shadow for depth */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Hover effect: Flip text */
+/* 4. Face 1: The Front (Initial View) */
+.cta-button span::before {
+  content: "Download CV"; 
+  /* Sits at default position Z=0 */
+}
+
+/* 5. Face 2: The Bottom Trapdoor (Hidden View) */
+.cta-button span::after {
+  content: attr(data-flip-text);
+  
+  /* Position it directly BELOW the front face */
+  top: 100%; 
+  left: 0;
+  
+  /* Hinge it on its TOP edge so it folds underneath */
+  transform-origin: top center;
+  /* Rotate it back 90deg to tuck it under the cube */
+  transform: rotateX(-90deg);
+}
+
+/* 6. The Animation (Roll the Cube UP) */
 .cta-button:hover span {
-  transform: rotateX(180deg);
+  /* Rotate POSITIVE 90deg along X axis to roll UP */
+  transform: rotateX(90deg); 
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-sidebar {
+  opacity: 0; /* Starts hidden */
+  animation: slideIn 0.8s ease-out forwards;
+
 }
