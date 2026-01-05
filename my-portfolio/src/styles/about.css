@@ -24,4 +24,19 @@
     color: var(--text-color);
   }
 
-  
+@media (max-width: 1024px) {
+  .about-section {
+    /* 1. Let it take up the full available space */
+    width: 100% !important;
+    max-width: 100% !important; /* Override the 800px limit */
+    
+    /* 2. Remove side margins that push it inward */
+    margin: 0 0 40px 0 !important; 
+    padding: 0 10px !important; /* Minimal padding */
+    
+    /* 3. Reset position */
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}

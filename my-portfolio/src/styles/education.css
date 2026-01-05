@@ -91,3 +91,39 @@
 html, body {
   overflow-x: hidden;
 }
+
+/* src/styles/education.css */
+
+@media (max-width: 768px) {
+  .education-section {
+    width: 100%; /* Ensure section fits screen */
+    padding: 20px 0;
+    overflow: hidden; /* Hide anything sticking out */
+  }
+
+  .education-card-container {
+    width: 100%;
+    /* Allow height to adjust if text wraps */
+    height: auto; 
+    min-height: 400px; 
+  }
+
+  .education-card {
+    /* FORCE FLUID WIDTH */
+    width: 90%; /* Leave 5% space on sides */
+    max-width: none; /* Remove any desktop limits */
+    position: relative; /* Stack normally on mobile instead of absolute if needed */
+    left: auto;
+    transform: none; /* Reset desktop transforms if they interfere */
+    margin: 0 auto; /* Center it */
+    
+    /* Reset text size for small screens */
+    padding: 20px;
+  }
+  
+  /* Make sure images scale down */
+  .education-card img {
+    max-width: 100%;
+    height: auto;
+  }
+}

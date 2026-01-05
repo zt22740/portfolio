@@ -50,3 +50,31 @@
     margin-bottom: 5px;
   }
   
+  /* --- RESPONSIVE FIX --- */
+@media (max-width: 1024px) {
+  .skills-section {
+    /* Reduce padding so it fits nicely on phones */
+    padding: 30px 15px !important; 
+    width: 100% !important;
+  }
+
+  .skills-grid {
+    /* Ensure grid takes full width */
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    /* Make the gap smaller on mobile to fit more items */
+    gap: 15px !important; 
+    
+    /* Optional: Make cards slightly smaller on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+  }
+
+  .skill-card {
+    padding: 10px !important; /* Less padding inside cards */
+  }
+
+  .skill-icon {
+    font-size: 30px !important; /* Smaller icons */
+  }
+}
