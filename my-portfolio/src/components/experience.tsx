@@ -1,5 +1,6 @@
 import "../styles/experience.css";
 import keysightLogo from "../assets/KEYS-18a34669.png"; // Import the company logo
+import uobLogo from "../assets/uob logo.jpg";
 import useFadeUp from "./fadeUp";
 
 const experienceData = [
@@ -8,11 +9,22 @@ const experienceData = [
     company: "Keysight Technologies",
     logo: keysightLogo,
     role: "Software Engineering Intern",
-    years: "Summer 2024",
+    years: "June 2024 - Sept 2024",
     description: [
       "Automated the creation of driver folders based on order data, streamlining the workflow.",
       "Developed a website that allowed test engineers to verify the latest software versions.",
       "Conducted practical testing on PCs and SIM cards, gaining real-world industrial exposure.",
+    ],
+  },
+  {
+    id: 2,
+    company: "University of Bristol",
+    logo: uobLogo,
+    role: "Software Developer Intern",
+    years: "May 2025 - Aug 2025",
+    description: [
+      "Worked on low-light video enhancement, applying recursive deep learning methods that combine the current frame with the previous frame as reference to improve temporal stability and brightness consistency.",
+      "Conducted large-scale training on HPC clusters, contributing to advances in state-of-the-art video restoration.",
     ],
   },
 ];

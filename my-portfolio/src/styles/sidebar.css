@@ -49,23 +49,48 @@
     color: #8b5cf6; /* Change color on hover */
   }
   
-  .cta-button {
-    background-color: #8b5cf6;
-    color: white;
-    padding: 10px 15px;
-    border: 2px solid #8b5cf6;
-    border-radius: 8px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #7c3aed;
-    transform: scale(1.05);
-  }
+/* Static button container */
+.cta-button {
+  background-color: #8b5cf6;
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid #8b5cf6;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative; /* Needed for text flipping */
+  overflow: hidden;
+  perspective: 1000px; /* Enables 3D effect */
+}
 
+/* Inner text wrapper for flipping */
+.cta-button span {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
 
+/* Backface of the text */
+.cta-button span::after {
+  content: attr(data-flip-text); /* Show flipped text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+}
+
+/* Hover effect: Flip text */
+.cta-button:hover span {
+  transform: rotateX(180deg);
+}

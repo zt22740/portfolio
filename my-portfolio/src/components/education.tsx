@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import "../styles/education.css";
 import bristolLogo from "../assets/uob logo.jpg";
+import intiLogo from "../assets/inti logo.jpg";
+import pcghsLogo from "../assets/pcghs logo.jpeg";
 
 const educationData = [
   {
@@ -9,15 +11,22 @@ const educationData = [
     logo: bristolLogo,
     degree: "MEng Computer Science",
     years: "2022 - 2026",
-    honors: "First-Class Honours",
+    honors: "Predicted First-Class Honours",
   },
   {
     id: 2,
-    title: "A-Levels",
-    institution: "Inti International College Penang",
+    title: "Inti International College Penang",
+    logo: intiLogo,
     years: "2021 - 2022",
     subjects: "Physics, Chemistry, Mathematics, Further Mathematics",
     grades: "A*, A*, A*, A*",
+  },
+  {
+    id: 3,
+    title: "Penang Chinese Girls' High School",
+    logo: pcghsLogo,
+    years: "2016 - 2020",
+    grades: "9A+ 1A",
   },
 ];
 

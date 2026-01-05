@@ -4,7 +4,7 @@
   --text-color: white;
   --card-bg: #222;
   --button-bg: #8b5cf6;
-  --button-hover: #7c3aed;
+  /* --button-hover: #7c3aed; */
   --nav-bg: #1e1e1e;
 }
 
@@ -14,7 +14,7 @@
   --text-color: black;
   --card-bg: #f5f5f5;
   --button-bg: #6b46c1;
-  --button-hover: #553c9a;
+  /* --button-hover: #553c9a; */
   --nav-bg: white;
 }
 

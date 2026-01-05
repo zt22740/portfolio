@@ -25,9 +25,10 @@ const Sidebar: React.FC = () => {
         </a>
       </div>
 
-      <a href={myCV} download="XinYanLim_CV.pdf" className="cta-button element-fade-up slower" data-animation="fade-up">
-        Download CV
+      <a href={myCV} download="XinYanLim_CV.pdf" className="cta-button element-fade-up" data-animation="fade-up">
+        <span data-flip-text="Download CV">Download CV</span>
       </a>
+
     </aside>
   );
 };
