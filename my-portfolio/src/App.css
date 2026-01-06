@@ -191,4 +191,17 @@ html {
     flex-direction: column;
     align-items: center; 
   }
+  .content-container {
+    /* CRITICAL FIX: Reset the margin that pushes everything right */
+    margin-left: 0 !important; 
+    
+    /* Reset spacing */
+    margin-top: 20px !important; 
+    width: 100% !important;
+    
+    /* Ensure it stacks vertically */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Centers the cards */
+  }
 }

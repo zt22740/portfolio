@@ -92,38 +92,43 @@ html, body {
   overflow-x: hidden;
 }
 
-/* src/styles/education.css */
-
 @media (max-width: 768px) {
-  .education-section {
-    width: 100%; /* Ensure section fits screen */
-    padding: 20px 0;
-    overflow: hidden; /* Hide anything sticking out */
-  }
-
+  /* 1. Container needs a height because absolute children don't push it open */
   .education-card-container {
-    width: 100%;
-    /* Allow height to adjust if text wraps */
-    height: auto; 
-    min-height: 400px; 
+    width: 100% !important;
+    height: 400px !important; /* Set a fixed height that fits your tallest card */
+    min-height: 400px !important;
+    overflow: hidden !important; 
   }
 
+  /* 2. Fix the Card Stacking */
   .education-card {
-    /* FORCE FLUID WIDTH */
-    width: 90%; /* Leave 5% space on sides */
-    max-width: none; /* Remove any desktop limits */
-    position: relative; /* Stack normally on mobile instead of absolute if needed */
-    left: auto;
-    transform: none; /* Reset desktop transforms if they interfere */
-    margin: 0 auto; /* Center it */
+    position: absolute !important;
     
-    /* Reset text size for small screens */
-    padding: 20px;
+    /* 1. Make the card narrower (Changed from 90% to 75%) */
+    width: 75% !important; 
+    
+    /* 2. Reduce internal spacing so content fits better */
+    padding: 15px !important; 
+    
+    /* Center the card */
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+    margin: 0 !important;
+  }
+
+  /* 3. Ensure the active card stays the same smaller size */
+  .education-card.active {
+    opacity: 1 !important;
+    /* Keeps the translation and scaling correct */
+    transform: translate(-50%, -50%) scale(1) !important; 
+    z-index: 10;
   }
   
-  /* Make sure images scale down */
+  /* 4. Ensure images are small enough */
   .education-card img {
-    max-width: 100%;
-    height: auto;
+    width: 60px !important; /* Smaller logos for mobile */
+    margin-bottom: 5px !important;
   }
 }

@@ -156,9 +156,9 @@
     left: auto !important;
     transform: none !important; /* Removes the vertical centering */
     
-    width: 100% !important; /* Fills the screen width */
+    width: 95% !important; /* Fills the screen width */
     height: auto !important; /* Allows it to grow/shrink based on content */
-    margin: 0 !important;
+    margin: 20px auto !important;
     
     display: flex !important;
     flex-direction: column !important; /* Stack items: Image -> Name -> Links */
@@ -168,5 +168,6 @@
     box-shadow: none !important; /* Optional: Looks cleaner as a flat header */
     border: none !important;
     border-bottom: 1px solid #333 !important; /* Adds a separator line instead */
+    box-sizing: border-box !important;
   }
 }

@@ -74,7 +74,7 @@ const Education = () => {
 
   return (
     <section id="education" className="education-section">
-      <h2 className="education-title">Education</h2>
+      <h1 className="education-title">Education</h1>
 
       {/* Remove onWheel prop, we handle it in useEffect */}
       <div
