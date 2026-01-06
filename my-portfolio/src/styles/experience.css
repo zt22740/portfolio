@@ -2,12 +2,21 @@
     text-align: center;
     padding: 50px;
   }
+
+  .experience-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap; 
+}
   
   /* Timeline Container */
   .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
     margin: 50px auto;
+    width: 100%;
   }
   
   /* Timeline Vertical Line */

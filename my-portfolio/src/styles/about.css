@@ -1,14 +1,24 @@
 /* 🌍 General About Section Styling */
 .about-section {
-    max-width: 800px;
+    display: flex;
+    /* 1. Ensure it fits in the container */
+    width: 100%; 
+    max-width: 100%;
+    
+    /* 2. Fix the padding math (Crucial!) */
+    box-sizing: border-box; 
+    
+    /* 3. Keep your existing spacing */
     margin: 40px auto;
     padding: 20px;
     text-align: center;
     color: var(--text-color);
-    border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease;
-    position: static;
-  }
+    flex-wrap: wrap;
+    justify-content: center !important; 
+    align-items: center !important;
+    /* Optional: Prevent text from hitting the very edges on small screens */
+    overflow-wrap: break-word; 
+}
   
   /* 🌍 Heading Styles */
   .about-section h1 {
@@ -19,9 +29,16 @@
   
   /* 🌍 Paragraph Styling */
   .about-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-color);
+      /* 1. Force text to wrap within the container */
+      white-space: normal !important; 
+      
+      /* 2. Break words if they are too long (like URLs or long jargon) */
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      
+      /* 3. Ensure the paragraph itself isn't wider than the section */
+      width: 100% !important;
+      max-width: 100% !important;
   }
 
 @media (max-width: 1024px) {
