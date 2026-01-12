@@ -35,13 +35,13 @@
   height: 200px; /* Standardized height */
   object-fit: contain; /* Prevents cropping */
   border-radius: 8px;
-  background-color: #222; /* Ensures consistent background */
+  background-color: var(--card-bg); /* Ensures consistent background */
   display: block;
 }
 
 /* Project Titles */
 h3 {
-  color: white;
+  color: var(--text-color);
   margin: 10px 0;
   font-size: 18px;
 }
@@ -51,7 +51,7 @@ h3 {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #8b5cf6;
+  background-color: var(--button-bg);
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -61,7 +61,7 @@ h3 {
 
 /* Fix button flipping issue */
 .github-link:hover {
-  background-color: #7c3aed;
+  background-color: #598392;
   transform: rotateX(20deg); /* Reduce rotation to avoid full flip */
 }
 

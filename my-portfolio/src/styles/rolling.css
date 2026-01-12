@@ -61,7 +61,7 @@
 .icon-skin .face {
   background-color: transparent; /* Or #112240 for dark block */
   border: 2px solid transparent; /* Visible border */
-  color: #ccd6f6;
+  color: #AEC3B0;
   border-radius: 50%; /* Make them circular! */
   font-size: 20px;
 }

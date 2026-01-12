@@ -32,7 +32,7 @@
 
   
   .role, .location {
-    color: #bbb;
+    color: var(--text-color);
   }
   
   

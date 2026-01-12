@@ -36,7 +36,7 @@
 }
 
 .navbar a:hover {
-  color: var(--button-bg); /* Adds hover effect */
+  color: var(--button-hover); /* Adds hover effect */
 }
 
 @media (max-width: 1024px) {
