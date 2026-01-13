@@ -1,74 +1,98 @@
 .navbar {
-  width: auto;
+  /* 1. Positioning */
+  position: fixed;
+  left: 350px;
+  top: 0;
+  
+  /* 🛑 CONSTRAINT: Pin to right edge so it stops growing */
+  right: 20px;       
+  width: auto;       
+  
+  /* 2. Layout */
   height: 60px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  position: fixed;
-  left: 350px; /* Moves navbar right next to sidebar */
-  top: 0;
+  justify-content: space-between; /* Spread items nicely */
+  
+  /* 🛑 NO WRAPPING: Force single line */
+  flex-wrap: nowrap; 
+  white-space: nowrap;
+  
+  /* 3. Squeeze: Reduce gap between the list and the toggle */
+  gap: 10px; 
+  
   background-color: var(--card-bg);
   border-radius: 10px;
   z-index: 100;
+  
+  /* Prevent scrollbars if it gets too tight */
+  overflow: hidden; 
 }
 
-/* Navbar Links */
+/* Navbar Links Container */
 .navbar ul {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  
+  /* 🛑 SQUEEZE: Reduce the gap between links significantly */
+  gap: 5px; /* Was 20px, reducing to 5px saves ~100px of space */
+  
   padding: 0;
   margin: 0;
-}
-
-/* List Items */
-.navbar li {
-  display: inline-block;
+  list-style: none;
 }
 
 /* Navbar Links Styling */
-/* 1. Base Link Style (Updated) */
 .navbar a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
   
-  /* CRITICAL: Add invisible padding now so the layout doesn't jump later */
-  padding: 8px 16px; 
-  border-radius: 20px; /* Makes the background pill-shaped */
+  /* 🛑 SHRINK: Make text and padding slightly smaller */
+  font-size: 15px;       
+  padding: 8px 12px;    /* Reduced from 16px to save space */
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;  /* Prevents "Experience" from breaking into two lines */
 }
 
-/* 2. Hover Effect (Keeps your current text-only hover) */
-.navbar a:hover {
-  color: var(--button-hover); 
-  /* We don't add a background here, keeping your current style */
-}
-
-/* 3. The "Active" State (When you are AT that section) */
+/* Active State */
 .navbar a.active {
-  background-color: var(--button-bg); /* The "BG like border" */
-  color: white; /* Make text readable on the dark background */
-  font-weight: bold; /* Optional: Make it pop more */
+  background-color: var(--button-bg);
+  color: white;
+  font-weight: bold;
 }
 
 @media (max-width: 1024px) {
   .navbar {
+    /* Pin to top-left */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    
+    /* Reset Desktop positioning */
+    right: auto !important; 
+    bottom: auto !important;
+    
+    /* Force full width */
     width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    
+    /* Layout */
     display: flex !important;
-    justify-content: center !important; /* Center the whole group */
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
+    justify-content: center !important;
     padding: 10px 0 !important;
+    height: auto !important; /* Allow growing for wrapped links */
+    
+    z-index: 1000 !important; /* Ensure it stays on top */
   }
 
+  /* 4. NAVBAR LINKS: Allow wrapping on mobile */
   .nav-links {
     display: flex !important;
-    flex-wrap: wrap !important; /* Allow wrapping on tiny phones */
+    flex-wrap: wrap !important;
     justify-content: center !important;
-    gap: 20px !important;
+    gap: 15px !important;
     width: 100% !important;
     padding: 0 !important;
   }
