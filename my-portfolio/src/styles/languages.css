@@ -1,0 +1,29 @@
+.languages-section {
+  text-align: center;
+  padding: 50px;
+}
+
+/* Language List */
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.language-list li {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* --- RESPONSIVE FIX --- */
+@media (max-width: 1024px) {
+  .languages-section {
+    /* Reduce padding so it fits nicely on phones */
+    padding: 30px 15px !important; 
+    width: 100% !important;
+  }
+
+  .language-list {
+    width: 100% !important;
+  }
+}

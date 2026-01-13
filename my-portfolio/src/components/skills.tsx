@@ -25,12 +25,6 @@ const skillsData = [
     { id: 19, name: "Firebase", icon: <SiFirebase className="skill-icon" />, category: "Backend" },
   ];
 
-const languages = [
-  { id: 1, name: "English", level: "Fluent" },
-  { id: 2, name: "Mandarin", level: "Fluent" },
-  { id: 3, name: "Malay", level: "Intermediate" },
-];
-
 const Skills: React.FC = () => {
   useFadeUp(); 
   return (
@@ -46,16 +40,6 @@ const Skills: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* Human Languages */}
-      <h1 className="element-fade-up" data-animation="fade-up">Languages</h1>
-      <ul className="language-list element-fade-up" data-animation="fade-up">
-        {languages.map((lang) => (
-          <li key={lang.id}>
-            <strong>{lang.name}</strong>: {lang.level}
-          </li>
-        ))}
-      </ul>
     </section>
   );
 };

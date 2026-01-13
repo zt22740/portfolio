@@ -34,28 +34,46 @@ const Education = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
+  // 1. ADD THIS: The "Scroll Lock" variable
+  const isScrolling = useRef(false);
+
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
+      // 2. SAFETY CHECK: If we are currently "locked", stop here.
+      if (isScrolling.current) {
+        e.preventDefault(); // Stop page from scrolling away while waiting
+        return;
+      }
+
       const { deltaY } = e;
 
       if (deltaY > 0) {
-        // --- USER SCROLLING DOWN ---
+        // --- SCROLL DOWN ---
         if (currentIndex < educationData.length - 1) {
-          e.preventDefault(); // Lock page
-          // Move to next card immediately
-          setCurrentIndex(currentIndex + 1); 
+          e.preventDefault();
+          triggerScroll(currentIndex + 1);
         }
       } else {
-        // --- USER SCROLLING UP ---
+        // --- SCROLL UP ---
         if (currentIndex > 0) {
-          e.preventDefault(); // Lock page
-          // Move to previous card immediately
-          setCurrentIndex(currentIndex - 1);
+          e.preventDefault();
+          triggerScroll(currentIndex - 1);
         }
       }
+    };
+
+    // 3. HELPER FUNCTION: Locks scroll, changes card, unlocks after delay
+    const triggerScroll = (nextIndex: number) => {
+      isScrolling.current = true; // Lock it
+      setCurrentIndex(nextIndex); // Change card
+
+      // Unlock after 800ms (Adjust this number if it feels too slow/fast)
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, 800);
     };
 
     // Attach listener
@@ -65,7 +83,7 @@ const Education = () => {
     return () => {
       container.removeEventListener("wheel", handleWheel);
     };
-  }, [currentIndex]); // Re-running this effect on index change ensures we always have the latest index
+  }, [currentIndex]); // Re-run when index changes
 
   // Handle dot click navigation
   const goToCard = (index: number) => {

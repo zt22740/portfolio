@@ -8,6 +8,7 @@ import Footer from "./components/footer";
 import Education from "./components/education";
 import Experience from "./components/experience";
 import Skills from "./components/skills";
+import Languages from "./components/languages";
 
 function App() {
   // Load theme from localStorage or default to dark mode
@@ -36,6 +37,7 @@ function App() {
           <Education />
           <Projects />
           <Skills />
+          <Languages />
           <Footer />
         </div>
       </div>

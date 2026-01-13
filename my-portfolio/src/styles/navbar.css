@@ -28,15 +28,29 @@
 }
 
 /* Navbar Links Styling */
+/* 1. Base Link Style (Updated) */
 .navbar a {
   color: var(--text-color);
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  
+  /* CRITICAL: Add invisible padding now so the layout doesn't jump later */
+  padding: 8px 16px; 
+  border-radius: 20px; /* Makes the background pill-shaped */
 }
 
+/* 2. Hover Effect (Keeps your current text-only hover) */
 .navbar a:hover {
-  color: var(--button-hover); /* Adds hover effect */
+  color: var(--button-hover); 
+  /* We don't add a background here, keeping your current style */
+}
+
+/* 3. The "Active" State (When you are AT that section) */
+.navbar a.active {
+  background-color: var(--button-bg); /* The "BG like border" */
+  color: white; /* Make text readable on the dark background */
+  font-weight: bold; /* Optional: Make it pop more */
 }
 
 @media (max-width: 1024px) {

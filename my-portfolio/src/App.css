@@ -81,7 +81,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 75px;
 }
 
 /* 🌙 Theme Toggle Button */
@@ -107,7 +107,7 @@ body {
   box-shadow: none;
 }
 
-/* 📌 General Button Style (With Flip Effect) */
+/* 📌 General Button Style*/
 button {
   border: 2px solid #555;
   background: none;
@@ -121,9 +121,6 @@ button {
   justify-content: center;
   transition: all 0.3s ease;
   border-radius: 8px;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transform-origin: center bottom;
 }
 
 /* Hover and Active States */
