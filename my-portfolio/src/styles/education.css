@@ -58,6 +58,22 @@
   100% { opacity: 1; transform: scale(1); }
 }
 
+@keyframes blink-mobile {
+  0% { 
+    opacity: 0; 
+    /* 👇 CRITICAL: We must include the centering translate here too! */
+    transform: translate(-50%, -50%) scale(0.9); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+}
+
 .education-card.blink {
   animation: blink 0.8s ease-in-out;
 }
@@ -146,5 +162,9 @@ html, body {
     /* Layout: Row instead of Column */
     flex-direction: row !important;
     gap: 15px !important;
+  }
+  .education-card.blink {
+    /* Override the default animation with the mobile-safe one */
+    animation: blink-mobile 0.8s ease-in-out !important;
   }
 }
