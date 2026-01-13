@@ -130,7 +130,7 @@ html, body {
     /* Center the card */
     left: 50% !important;
     top: 50% !important;
-    transform: translate(-50%, -50%) scale(0.9) !important;
+    transition: opacity 0.6s ease-in-out !important;
     margin: 0 !important;
   }
 
