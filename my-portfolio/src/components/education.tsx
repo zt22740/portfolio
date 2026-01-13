@@ -1,4 +1,6 @@
-import { useState, useRef, useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
+// 1. IMPORT THIS
+import { useSwipeable } from "react-swipeable";
 import "../styles/education.css";
 import bristolLogo from "../assets/uob logo.jpg";
 import intiLogo from "../assets/inti logo.jpg";
@@ -33,31 +35,59 @@ const educationData = [
 const Education = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-
-  // 1. ADD THIS: The "Scroll Lock" variable
   const isScrolling = useRef(false);
 
+  // --- HELPER FUNCTION: Locks scroll, changes card, unlocks ---
+  const triggerScroll = (nextIndex: number) => {
+    if (isScrolling.current) return; // Prevent double-firing
+    
+    isScrolling.current = true;
+    setCurrentIndex(nextIndex);
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 800);
+  };
+
+  // --- 2. ADD SWIPE HANDLERS ---
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      // Swipe Left = Go Next
+      if (currentIndex < educationData.length - 1) {
+        triggerScroll(currentIndex + 1);
+      }
+    },
+    onSwipedRight: () => {
+      // Swipe Right = Go Back
+      if (currentIndex > 0) {
+        triggerScroll(currentIndex - 1);
+      }
+    },
+    // IMPORTANT: Allow vertical scrolling while touching the card
+    preventScrollOnSwipe: false,
+    trackTouch: true,
+    trackMouse: true, // Allows testing with mouse drag on laptop
+  });
+
+  // --- WHEEL LOGIC (Keep exactly as before) ---
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // 2. SAFETY CHECK: If we are currently "locked", stop here.
       if (isScrolling.current) {
-        e.preventDefault(); // Stop page from scrolling away while waiting
+        e.preventDefault();
         return;
       }
 
       const { deltaY } = e;
 
       if (deltaY > 0) {
-        // --- SCROLL DOWN ---
         if (currentIndex < educationData.length - 1) {
           e.preventDefault();
           triggerScroll(currentIndex + 1);
         }
       } else {
-        // --- SCROLL UP ---
         if (currentIndex > 0) {
           e.preventDefault();
           triggerScroll(currentIndex - 1);
@@ -65,27 +95,10 @@ const Education = () => {
       }
     };
 
-    // 3. HELPER FUNCTION: Locks scroll, changes card, unlocks after delay
-    const triggerScroll = (nextIndex: number) => {
-      isScrolling.current = true; // Lock it
-      setCurrentIndex(nextIndex); // Change card
-
-      // Unlock after 800ms (Adjust this number if it feels too slow/fast)
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 800);
-    };
-
-    // Attach listener
     container.addEventListener("wheel", handleWheel, { passive: false });
-
-    // Clean up listener
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
+    return () => container.removeEventListener("wheel", handleWheel);
   }, [currentIndex]); // Re-run when index changes
 
-  // Handle dot click navigation
   const goToCard = (index: number) => {
     setCurrentIndex(index);
   };
@@ -94,10 +107,15 @@ const Education = () => {
     <section id="education" className="education-section">
       <h1 className="education-title">Education</h1>
 
-      {/* Remove onWheel prop, we handle it in useEffect */}
       <div
         className="education-card-container"
-        ref={scrollContainerRef}
+        // 3. MERGE REFS & ATTACH HANDLERS
+        {...handlers} 
+        ref={(el) => {
+          // This tricky part merges both refs so everything works
+          handlers.ref(el); 
+          scrollContainerRef.current = el;
+        }}
       >
         {educationData.map((edu, index) => (
           <div key={edu.id} className={`education-card ${index === currentIndex ? "active blink" : ""}`}>

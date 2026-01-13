@@ -131,4 +131,20 @@ html, body {
     width: 60px !important; /* Smaller logos for mobile */
     margin-bottom: 5px !important;
   }
+
+  .education-nav {
+    /* Reset desktop positioning */
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    /* New Mobile Position: Bottom Center */
+    bottom: 20px !important; /* Adjust if it's too close to the text */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Centers it horizontally */
+
+    /* Layout: Row instead of Column */
+    flex-direction: row !important;
+    gap: 15px !important;
+  }
 }
