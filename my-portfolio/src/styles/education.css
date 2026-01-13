@@ -61,16 +61,20 @@
 @keyframes blink-mobile {
   0% { 
     opacity: 0; 
-    /* 👇 CRITICAL: We must include the centering translate here too! */
-    transform: translate(-50%, -50%) scale(0.9); 
+    /* Standard */
+    transform: translate(-50%, -50%) scale(0.9);
+    /* 👇 Safety for Safari/Chrome on Mobile */
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
   }
   50% { 
     opacity: 1; 
     transform: translate(-50%, -50%) scale(1); 
+    -webkit-transform: translate(-50%, -50%) scale(1);
   }
   100% { 
     opacity: 1; 
     transform: translate(-50%, -50%) scale(1); 
+    -webkit-transform: translate(-50%, -50%) scale(1);
   }
 }
 
